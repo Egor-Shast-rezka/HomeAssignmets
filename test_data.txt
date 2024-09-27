@@ -1,0 +1,15 @@
+Program was started.
+-----------------
+print_hello was called.
+------------------
+
+
+
+user write text:join
+
+program completed successfully.
+cucle update.
+--------------
+program completed successfully.
+-------------------
+
