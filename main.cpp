@@ -5,5 +5,5 @@
 #include "def_hello.h"
 
 int main(){
-	print_hello();
+    print_hello();
 }

@@ -4,10 +4,13 @@
 
 #gmail: st129457@student.spbu.ru,	egor.shast0.0@gmail.com
 
-#		How start the program:
 
+
+#		How start the program:
+#BUILD:
 #bulging a program using "make"
 
+#RUN:
 #then write "./main" to run the program
 
 #to complete click "Ctrl+C" or print "off"
