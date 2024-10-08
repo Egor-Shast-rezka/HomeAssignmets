@@ -1,21 +1,16 @@
-#Assignment2a.
+# Assignment2a.
+## Егор Шастин Олегович, gruppa b81-mm
+## Contact: st129457@student.spbu.ru,	egor.shast0.0@gmail.com
 
-#Make a  Егор Шастин Олегович, gruppa b81-mm
+## Home assingment 2a. This programm gets file, reverses text in file and writes it in other file.
 
-#gmail: st129457@student.spbu.ru,	egor.shast0.0@gmail.com
-
-
-
-#		How start the program:
 #BUILD:
-#
+# make
 
 #RUN:
-#
+# ./main
 
 
 
 
-#Thank you for using my program
-
-#15-17.07.2024    @All rights reserved
+#06-08.10.2024

@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 TARGET = main
 
-SRCS = main.cpp def_reverse.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
