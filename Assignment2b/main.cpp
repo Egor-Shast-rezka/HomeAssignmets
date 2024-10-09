@@ -2,9 +2,48 @@
     This function contains the main code. it get reverse polish notation => split by spaces => calculates result of an exspression.It gets file, reverses text in file and writes it in other file.
 */
 
+
 #include <iostream>
 #include <string>
-#include <stack>
+
+
+class Stack {
+
+private:
+    int* data;
+    int size;
+    int power;
+
+public:
+
+    // general function for stack, created stack
+    Stack(int len) {
+        data = new int[len];
+        size = 0;
+        power = len;
+    }
+
+    // Add an element to the stack
+    void push(int value) {
+        data[size++] = value;
+    }
+
+    // Remove the top element of the stack
+    void pop() {
+        --size;
+    }
+
+    // Return the top element of the stack
+    int top() const {
+        if (size > 0) {
+            return data[size - 1];
+        } else {
+            return -1;  // If the stack is empty, return -1
+        }
+    }
+};
+
+
 
 int main() {
 
@@ -14,18 +53,19 @@ int main() {
     std::getline(std::cin, str);
 
     // main function, calculate reverse polish notation
-    std::stack<int> stack;
+    // create stack
+    Stack stack(str.length()+1);
     std::string elem;
 
     for (unsigned long i = 0; i < str.length(); i++) {
-    
+
         // split by spaces
         if (str[i] != ' ') {
         
             // collect the string up to the space
             elem += str[i];
         } else if (!elem.empty()) {
-        
+
             // check, (elem == digit) or (elem == sign(+-*/) => calculate part of result)
             bool isNum = true;
             for (char num : elem) {
@@ -96,7 +136,6 @@ int main() {
 
     return 0;
 }
-
 
 
 
