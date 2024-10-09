@@ -1,8 +1,8 @@
-# Assignment2a.
+# Assignment2b.
 ## Егор Шастин Олегович, gruppa b81-mm
 ## Contact: st129457@student.spbu.ru,	egor.shast0.0@gmail.com
 
-## Home assingment 2a. This programm gets file, reverses text in file and writes it in other file.
+## Home assingment 2b. This program get reverse polish notation => split by spaces => colculates result of an exspression.
 
 #BUILD:
 # make
