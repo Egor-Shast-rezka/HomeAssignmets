@@ -1,5 +1,5 @@
 /* Egor Shastin st129457@student.spbu.ru
-    This function contains the main code. It gets file, reverses text in file and writes it in other file.
+    This function contains the main code. It gets file, reverses text in file and writes it in new file.
 */
 
 
@@ -17,22 +17,35 @@ int main() {
     
     //array create
     char* arr = new char[file_size];
-    infile.read((char*)arr, file_size);
+    infile.read(arr, file_size);
     
     //file close
     infile.close();
     
     //array reverse
-    char* arr_reverse = new char(file_size);
+    char* arr_reverse = new char[file_size];
     for (std::size_t i = 0; i < file_size; i++){
         arr_reverse[i] = arr[file_size-1-i];
     }
     
     //array write in file
     std::ofstream outfile("outfile.bin", std::ios::binary|std::ios::out);
-    outfile.write((char*)arr_reverse, file_size);
+    outfile.write(arr_reverse, file_size);
     
     //file close
     outfile.close();
+    
+    delete[] arr;
+    delete[] arr_reverse;
     return 1;
 }
+
+
+
+
+
+
+
+
+
+
