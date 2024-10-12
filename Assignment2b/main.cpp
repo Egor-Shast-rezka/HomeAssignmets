@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 
 class Stack {
@@ -51,58 +52,18 @@ int main() {
     std::string str;
     std::cout << "Write your expression: ";
     std::getline(std::cin, str);
-
+    
+    // ebumerate numbers and characters through spaces
+    std::istringstream text(str);
+    std::string elem;
+    
     // main function, calculate reverse polish notation
     // create stack
     Stack stack(str.length()+1);
-    std::string elem;
 
-    for (unsigned long i = 0; i < str.length(); i++) {
+    while(text >> elem) {
 
-        // split by spaces
-        if (str[i] != ' ') {
-        
-            // collect the string up to the space
-            elem += str[i];
-        } else if (!elem.empty()) {
-
-            // check, (elem == digit) or (elem == sign(+-*/) => calculate part of result)
-            bool isNum = true;
-            for (char num : elem) {
-                if (!std::isdigit(num)) {
-                    isNum = false;
-                    break;
-                }
-            }
-
-            // if digit => push in stack, else calculate part of result
-            if (isNum) {
-                int num = std::stoi(elem);
-                stack.push(num);
-            } else {
-            
-                // calculate part of result
-                int num1 = stack.top();
-                stack.pop();
-                int num2 = stack.top();
-                stack.pop();
-                if (elem == "+") {
-                    stack.push(num2 + num1);
-                } else if (elem == "-") {
-                    stack.push(num2 - num1);
-                } else if (elem == "*") {
-                    stack.push(num2 * num1);
-                } else if (elem == "/") {
-                    stack.push(num2 / num1);
-                }
-            }
-
-            elem = ""; // Clean elem 
-        }
-    }
-
-    // Process the last element (if there was no space at the end of the line)
-    if (!elem.empty()) {
+        // check, (elem == digit) or (elem == sign(+-*/) => calculate part of result)
         bool isNum = true;
         for (char num : elem) {
             if (!std::isdigit(num)) {
@@ -111,10 +72,13 @@ int main() {
             }
         }
 
+        // if digit => push in stack, else calculate part of result
         if (isNum) {
             int num = std::stoi(elem);
             stack.push(num);
         } else {
+            
+            // calculate part of result
             int num1 = stack.top();
             stack.pop();
             int num2 = stack.top();
