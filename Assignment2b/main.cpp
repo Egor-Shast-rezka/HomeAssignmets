@@ -11,7 +11,7 @@
 class Stack {
 
 private:
-    int* data;
+    double* data;
     int size;
     int power;
 
@@ -19,13 +19,13 @@ public:
 
     // general function for stack, created stack
     Stack(int len) {
-        data = new int[len];
+        data = new double[len];
         size = 0;
         power = len;
     }
 
     // Add an element to the stack
-    void push(int value) {
+    void push(double value) {
         data[size++] = value;
     }
 
@@ -35,7 +35,7 @@ public:
     }
 
     // Return the top element of the stack
-    int top() const {
+    double top() const {
         if (size > 0) {
             return data[size - 1];
         } else {
@@ -66,7 +66,7 @@ int main() {
         // check, (elem == digit) or (elem == sign(+-*/) => calculate part of result)
         bool isNum = true;
         for (char num : elem) {
-            if (!std::isdigit(num)) {
+            if (!std::isdigit(num) && num != '.') {
                 isNum = false;
                 break;
             }
@@ -74,14 +74,14 @@ int main() {
 
         // if digit => push in stack, else calculate part of result
         if (isNum) {
-            int num = std::stoi(elem);
+            double num = std::stod(elem);
             stack.push(num);
         } else {
             
             // calculate part of result
-            int num1 = stack.top();
+            double num1 = stack.top();
             stack.pop();
-            int num2 = stack.top();
+            double num2 = stack.top();
             stack.pop();
             if (elem == "+") {
                 stack.push(num2 + num1);
