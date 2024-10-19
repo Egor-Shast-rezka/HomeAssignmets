@@ -4,20 +4,7 @@
 
 #include "ClassTransformer.h"
 #include <iostream>
-#include <string> // only for getting data from user
-
-
-// Ammo
-void Transformer::setAmmo(unsigned int ammo) {_ammo = ammo;}
-unsigned int Transformer::getAmmo() {return _ammo;}
-
-// Level
-void Transformer::setLevel(unsigned int level) {_level = level;}
-unsigned int Transformer::getLevel() {return _level;}
-
-// Fuel
-void Transformer::setFuel(unsigned int fuel) {_fuel = fuel;}
-unsigned int Transformer::getFuel() {return _fuel;}
+#include <string> // only for getting data from user, not used in general code
 
 // main function
 int main() {
@@ -26,20 +13,20 @@ int main() {
     // But i completed all generals ideas and tasks.
     
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
-    std::cout << "RULE:   For each turn, movement, jump one fuel is removed." << std::endl;
+    std::cout << "RULE:   For each turn, movement one fuel is removed." << std::endl;
     std::cout << "Ultimate from 100 strength. Transformation from 10 level." << std::endl;
     std::cout << "In start: level(5), strength(5), fuel(5), ammo(5)" << std::endl;
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
     
-    Transformer newTransformer;
+    Autobot newTransformer; // May choose autobot/decepticon/dinobot/transformer <= 3 class inheritance and 1 basic
     bool work = true;
     while (work) {
     
         // get text from user/plauer
         std::string text;
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
-        std::cout << "Write your command (off, ammo, turn, level, fuel," << std::endl;
-        std::cout << "fire, move, jump, transform, ulta): ";
+        std::cout << "Write your command (off, ammo, turn, level, fuel - set meaning" << std::endl;
+        std::cout << "fire, move, transform, ulta): ";
         std::getline(std::cin, text);
         
         // all actions
@@ -99,9 +86,6 @@ int main() {
             
         } else if (text == "move") {
             newTransformer.move();
-            
-        } else if (text == "jump") {
-            newTransformer.jump();
             
         } else if (text == "transform") {
             newTransformer.transform();
