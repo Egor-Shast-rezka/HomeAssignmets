@@ -1,10 +1,13 @@
-/* Egor Shastin st129457@student.spbu.ru
-    
+/*
+    Egor Shastin st129457@student.spbu.ru
 */
 
-#include "ClassTransformer.h"
 #include <iostream>
 #include <string> // only for getting data from user, not used in general code
+#include "Class_Transformer.h"
+#include "Class_Autobot.h"
+#include "Class_Dinobot.h"
+#include "Class_Decepticon.h"
 
 // main function
 int main() {
@@ -18,7 +21,10 @@ int main() {
     std::cout << "In start: level(5), strength(5), fuel(5), ammo(5)" << std::endl;
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
     
-    Autobot newTransformer; // May choose autobot/decepticon/dinobot/transformer <= 3 class inheritance and 1 basic
+    Autobot newTransformer;  // May choose autobot/decepticon/dinobot/transformer <= 3 class inheritance and 1 basic
+    Weapon specialWeapon(150, true);
+    newTransformer.setAssociateWeapon(&specialWeapon);  //set associate Weapon
+    
     bool work = true;
     while (work) {
     
@@ -67,13 +73,13 @@ int main() {
 
             Direction dir;
             if (direction == "left") {
-                dir = Direction::left;
+                dir = Direction::Left;
             } else if (direction == "right") {
-                dir = Direction::right;
+                dir = Direction::Right;
             } else if (direction == "up") {
-                dir = Direction::up;
+                dir = Direction::Up;
             } else if (direction == "down") {
-                dir = Direction::down;
+                dir = Direction::Down;
             } else {
                 std::cout << "-> Invalid direction!" << std::endl;
                 continue;

@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 TARGET = main
 
-SRCS = main.cpp ClassTransformer.cpp 
+SRCS = main.cpp Class_Transformer.cpp Class_Autobot.cpp Class_Dinobot.cpp Class_Decepticon.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
