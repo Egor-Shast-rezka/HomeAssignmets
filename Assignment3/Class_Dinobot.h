@@ -1,5 +1,7 @@
 /*
     Egor Shastin st129457@student.spbu.ru
+    This is the header file for the inherited class Dinobot, it declares the constructor, destructor,
+    and main functions of this class.
 */
 
 #ifndef CLASS_DINOBOT_H
@@ -18,11 +20,13 @@ public:
     void setAlive(bool alive) {
         _still_alive = alive;
     }
+    
     bool getAlive() const { return _still_alive; }
     
     void setFirepowerDinobot(int fire) {
         _firepower_dinobot = fire;
     }
+    
     bool getFirepowerDinobot() const { return _firepower_dinobot; }
     
 private:

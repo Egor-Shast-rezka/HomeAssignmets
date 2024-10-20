@@ -1,14 +1,16 @@
 /* 
     Egor Shastin st129457@student.spbu.ru
+    This header file contains the declaration of the Transformer and Weapon classes 
+    and the anum class Direction.
 */
 
 #ifndef CLASS_TRANSFORMER_H
 #define CLASS_TRANSFORMER_H
 
-// class for indicate direction
+// Class for indicate direction
 enum class Direction { Left, Right, Up, Down};
 
-// class Weapon for composition
+// Class Weapon for composition
 class Weapon {
 public:
     Weapon() : _damage(0), _is_have(false) {};
@@ -17,11 +19,13 @@ public:
     void setDamage(unsigned int dam) {
         _damage = dam;
     }
+    
     unsigned int getDamage() const { return _damage; }
     
     void setIsHave(int hav) {
         _is_have = hav;
     }
+    
     bool getIsHave() const { return _is_have; }
     
 private:
@@ -45,24 +49,28 @@ public:
     void setAmmo(unsigned int ammo) {
         _ammo = ammo;
     }
+    
     unsigned int getAmmo() { return _ammo; }
 
     // Level
     void setLevel(unsigned int level) {
         _level = level;
     }
+    
     unsigned int getLevel() { return _level; }
 
     // Fuel
     void setFuel(unsigned int fuel) {
         _fuel = fuel;
     }
+    
     unsigned int getFuel() { return _fuel; }
     
     // Associate with Weapon
     void setAssociateWeapon(Weapon* weapon) {
         _associateWeapon = weapon;
     }
+    
     Weapon* getAssociateWeapon() const { return _associateWeapon; }
 
 protected:
@@ -70,8 +78,8 @@ protected:
     unsigned int _level;
     unsigned int _strength;
     unsigned int _fuel;
-    Weapon _weapon;  //composition
-    Weapon* _associateWeapon;  //association
+    Weapon _weapon;  //Composition class Weapon
+    Weapon* _associateWeapon;  //Association class Weapon
 };
 
 #endif

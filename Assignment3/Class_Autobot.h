@@ -1,5 +1,7 @@
 /*
     Egor Shastin st129457@student.spbu.ru
+    This is the header file for the inherited class Autobot, it declares the constructor, 
+    destructor, and main functions of this class.
 */
 
 #ifndef CLASS_AUTOBOT_H
@@ -18,11 +20,13 @@ public:
     void setHelping(bool help) {
         _helping = help;
     }
+    
     bool getHelping() const { return _helping; }
     
     void setFirepowerAutobot(int fire) {
         _firepower_autobot = fire; 
     }
+    
     bool getFirepowerAutobot() const { return _firepower_autobot; }
     
 private:

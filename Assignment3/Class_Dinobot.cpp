@@ -1,5 +1,7 @@
 /*
     Egor Shastin st129457@student.spbu.ru
+    This code contains the constructor and destructor for the inherited Dinobot class, 
+    as well as the function transform.
 */
 
 #include <iostream>
