@@ -25,3 +25,32 @@ bool Dinobot::transform() {
     std::cout << "-> Dinobot transforming in a dinosaur." << std::endl << std::endl;
     return true;
 }
+
+// Setters and getters for Dinobot
+void Dinobot::setAlive(bool alive) {
+    _still_alive = alive;
+}
+    
+bool Dinobot::getAlive() const { return _still_alive; }
+    
+void Dinobot::setFirepowerDinobot(int fire) {
+    _firepower_dinobot = fire;
+}
+    
+bool Dinobot::getFirepowerDinobot() const { return _firepower_dinobot; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

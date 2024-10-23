@@ -17,6 +17,7 @@ Autobot::~Autobot() {
     std::cout << "-> Autobot destroued" << std::endl;
 }
 
+// Transforming for Autobot
 bool Autobot::transform() {
     if (_level < 10) {
         std::cout << "-> Not enogh level" << std::endl << std::endl;
@@ -25,4 +26,36 @@ bool Autobot::transform() {
     std::cout << "-> Autobot transforming in a Car." << std::endl << std::endl;
     return true;
 }
+
+// Setters and getters for autobot
+void Autobot::setHelping(bool help) {
+    _helping = help;
+}
+    
+bool Autobot::getHelping() const { return _helping; }
+    
+void Autobot::setFirepowerAutobot(int fire) {
+    _firepower_autobot = fire; 
+}
+    
+bool Autobot::getFirepowerAutobot() const { return _firepower_autobot; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

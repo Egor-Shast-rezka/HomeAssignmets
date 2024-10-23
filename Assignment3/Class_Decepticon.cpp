@@ -25,3 +25,33 @@ bool Decepticon::transform() {
     std::cout << "-> Decepticon transforming in a Tank." << std::endl << std::endl;
     return true;
 }
+
+// Setters and getters for Decepticon
+void Decepticon::setBloodiness(bool blood) {
+    _bloodiness = blood;
+}
+    
+bool Decepticon::getBloodiness() const { return _bloodiness; }
+    
+void Decepticon::setFirepowerDecepticon(int fire) {
+    _firepower_decepticon = fire;
+}
+    
+bool Decepticon::getFirepowerDecepticon() const { return _firepower_decepticon; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

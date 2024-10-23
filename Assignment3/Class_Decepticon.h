@@ -9,7 +9,7 @@
 
 #include "Class_Transformer.h"
 
-// class Decepticon
+// Declare class Decepticon
 class Decepticon : public Transformer {
 public:
     Decepticon();
@@ -17,17 +17,15 @@ public:
     
     bool transform() override;
     
-    void setBloodiness(bool blood) {
-        _bloodiness = blood;
-    }
+    // Bloodines
+    void setBloodiness(bool blood);
     
-    bool getBloodiness() const { return _bloodiness; }
+    bool getBloodiness() const;
     
-    void setFirepowerDecepticon(int fire) {
-        _firepower_decepticon = fire;
-    }
+    // Firepower
+    void setFirepowerDecepticon(int fire);
     
-    bool getFirepowerDecepticon() const { return _firepower_decepticon; }
+    bool getFirepowerDecepticon() const;
     
 private:
     unsigned int _firepower_decepticon;

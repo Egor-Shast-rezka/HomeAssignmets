@@ -9,25 +9,23 @@
 
 #include "Class_Transformer.h"
 
-// Creating class Autobot
+// Declare class Autobot
 class Autobot : public Transformer {
 public:
     Autobot();
     ~Autobot() override;
     
     bool transform() override;
+
+    // Helping    
+    void setHelping(bool help);
     
-    void setHelping(bool help) {
-        _helping = help;
-    }
+    bool getHelping() const;
     
-    bool getHelping() const { return _helping; }
+    // Firepower
+    void setFirepowerAutobot(int fire);
     
-    void setFirepowerAutobot(int fire) {
-        _firepower_autobot = fire; 
-    }
-    
-    bool getFirepowerAutobot() const { return _firepower_autobot; }
+    bool getFirepowerAutobot() const;
     
 private:
     unsigned int _firepower_autobot;

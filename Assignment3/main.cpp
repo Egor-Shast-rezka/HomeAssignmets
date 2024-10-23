@@ -10,12 +10,12 @@
 #include "Class_Autobot.h"
 #include "Class_Dinobot.h"
 #include "Class_Decepticon.h"
+#include "Class_Weapon.h"
 
 //Main function
 int main() {
     Autobot newTransformer;  // May choose autobot/decepticon/dinobot/transformer
-    Weapon specialWeapon(150, true);
-    newTransformer.setAssociateWeapon(&specialWeapon);  //Set associate Weapon
+
     
     bool work = true;
     while (work) {
@@ -67,7 +67,7 @@ int main() {
             newTransformer.setLevel(level);
             std::cout << "Current level: " << newTransformer.getLevel() << std::endl << std::endl;
             
-        } else if (text == "turn") { // move in left/right ....
+        } else if (text == "turn") { // Move in left/right ....
          
             // Get data from user
             std::string direction;
@@ -92,7 +92,6 @@ int main() {
              
         } else if (text == "fire") {  // Turn Transformer
             newTransformer.fire();
-            std::cout << "Ammo after firing: " << newTransformer.getAmmo() << std::endl << std::endl;
             
         } else if (text == "move") { // Move Transformer
             newTransformer.move();

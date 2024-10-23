@@ -9,7 +9,7 @@
 
 #include "Class_Transformer.h"
 
-// class Dinobot
+// Declare class Dinobot
 class Dinobot : public Transformer {
 public:
     Dinobot();
@@ -17,17 +17,15 @@ public:
     
     bool transform() override;
     
-    void setAlive(bool alive) {
-        _still_alive = alive;
-    }
+    // Alive
+    void setAlive(bool alive);
     
-    bool getAlive() const { return _still_alive; }
+    bool getAlive() const;
     
-    void setFirepowerDinobot(int fire) {
-        _firepower_dinobot = fire;
-    }
+    // Firepower
+    void setFirepowerDinobot(int fire);
     
-    bool getFirepowerDinobot() const { return _firepower_dinobot; }
+    bool getFirepowerDinobot() const;
     
 private:
     unsigned int _firepower_dinobot;

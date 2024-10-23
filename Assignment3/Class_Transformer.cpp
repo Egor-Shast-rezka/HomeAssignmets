@@ -6,26 +6,25 @@
 
 #include <iostream>
 #include "Class_Transformer.h"
+#include "Class_Ability.h"
 
 // Class constructor implementation
-Transformer::Transformer() : 
-    _level(15), _strength(100), _fuel(20), _ammo(5), _weapon(100, true), _associateWeapon(nullptr) {
-    std::cout << "-> Transformer created." << std::endl;
-}
+Transformer::Transformer() : _level(15), _strength(100), _fuel(20), _ammo(5), _weapon(10, true) {}
 
 // Class deconstructor implementation
-Transformer::~Transformer() {
-    std::cout << "-> Transformer destroyed.." << std::endl;
-}
+Transformer::~Transformer() {}
 
 // Function fire implementation
 bool Transformer::fire() {
-    if (_associateWeapon && _associateWeapon->getIsHave()){
-        std::cout << "-> Fire. Damage: " << _associateWeapon->getDamage() << std::endl;
+    if (_weapon.getIsHave() && _weapon.getPatron() > 0) { // Does the Transformer have weapon and patrons?
+        _weapon.setPatron(_weapon.getPatron()-1); // Transformer shot
+        std::cout << "-> Transformer fire from weapon..." << std::endl << std::endl;
+        std::cout << "Ammo after firing: " << _weapon.getPatron() << std::endl << std::endl;
         return true;
-    } else if (_ammo > 0) {
-        _ammo--;
+    } else if (_ammo > 0) { // If Transformer dont have weapon or patrones
+        _ammo--; // Transformer shot
         std::cout << "-> Firing..." << std::endl << std::endl;
+        std::cout << "Ammo after firing: " << Transformer::getAmmo() << std::endl << std::endl;
         return true;
     } else {
         std::cout << "-> No ammo!" << std::endl;
@@ -33,13 +32,34 @@ bool Transformer::fire() {
     }
 }
 
+// Ammo ( getter and setter )
+void Transformer::setAmmo(unsigned int ammo) {
+    _ammo = ammo;
+}
+
+unsigned int Transformer::getAmmo() { return _ammo; }
+
+// Level ( getter and setter )
+void Transformer::setLevel(unsigned int level) {
+    _level = level;
+} 
+
+unsigned int Transformer::getLevel() { return _level; }
+
+// Fuel ( getter and setter )
+void Transformer::setFuel(unsigned int fuel) {
+    _fuel = fuel;
+} 
+
+unsigned int Transformer::getFuel() { return _fuel; }
+
 // Function turn implementation
 bool Transformer::turn(Direction dir) {
     if (_fuel == 0){
         std::cout << "-> fuel is lost" << std::endl << std::endl;
         return false;
     }
-    _fuel--;
+    _fuel--; // Turning
     switch (dir) {
         case Direction::Left:
             std::cout << "-> Turning left.." << std::endl << std::endl;
@@ -60,14 +80,16 @@ bool Transformer::turn(Direction dir) {
 
 // Mini function for transformer implementation
 
-// Ultimate for Transform
+// Ultimate for Transform ( implementation associative class )
 bool Transformer::ultimate() {
-    if (_strength < 100) {
-        std::cout << "-> Not enogh strength" << std::endl << std::endl;
-        return false;
+    if (_fuel > 15){
+        Ability ultimateAbility(true, 15); // Create Ability
+        ultimateAbility.activate(*this);
+        std::cout << "-> Ultimate!!!! ..." << std::endl;
+        std::cout << "-> Left fuel: " << _fuel << std::endl << std::endl;
+    } else {
+        std::cout << "-> Fuel is lost" << std::endl << std::endl;
     }
-    std::cout << "-> Ultimate!!!! ..." << std::endl;
-    std::cout << "-> Left fuel: " << _fuel << std::endl << std::endl;
     return true;
 }
 
