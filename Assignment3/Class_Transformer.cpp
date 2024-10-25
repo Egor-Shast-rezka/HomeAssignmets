@@ -9,7 +9,7 @@
 #include "Class_Ability.h"
 
 // Class constructor implementation
-Transformer::Transformer() : _level(15), _strength(100), _fuel(20), _ammo(5), _weapon(10, true) {}
+Transformer::Transformer() : _ammo(5), _level(15), _strength(100), _fuel(20), _weapon(10, true) {}
 
 // Class deconstructor implementation
 Transformer::~Transformer() {}
