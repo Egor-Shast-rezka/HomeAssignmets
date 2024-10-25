@@ -17,6 +17,7 @@ class Transformer
 {
 public:
     Transformer();
+    Transformer(unsigned int _ammo, unsigned int _level, unsigned int _strength, unsigned int _fuel, Weapon _weapon);
     virtual ~Transformer();
 
     virtual bool move();

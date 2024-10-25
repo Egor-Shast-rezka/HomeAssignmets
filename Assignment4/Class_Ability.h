@@ -13,7 +13,7 @@ class Ability
 {
 public:
     Ability();
-    Ability(bool hav, unsigned int power);
+    Ability(bool hav, unsigned int power); // Overload constructor
 
     void activate(Transformer& transformer);
 

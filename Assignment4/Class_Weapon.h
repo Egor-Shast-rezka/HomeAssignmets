@@ -11,7 +11,7 @@ class Weapon
 {
 public:
     Weapon();
-    Weapon(unsigned int patron, bool hav);
+    Weapon(unsigned int patron, bool hav); // Overload constructor
 
     // Patron
     void setPatron(unsigned int patron);
