@@ -14,6 +14,7 @@ class Decepticon : public Transformer
 {
 public:
     Decepticon();
+    Decepticon(unsigned int _firepower_decepticon, bool _bloodiness); // Overload constructor
     ~Decepticon() override;
 
     bool transform() override;

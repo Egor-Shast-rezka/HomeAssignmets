@@ -28,7 +28,11 @@ int main()
     // Realization function comparison two Transformers
     if (decepticon.getFirepowerDecepticon() > autobot.getFirepowerAutobot())
     {
-        std::cout << "Decepticon win\n";
+        std::cout << "Decepticon win\n\n";
+    } else if (decepticon.getFirepowerDecepticon() < autobot.getFirepowerAutobot()) {
+        std::cout << "Autobot win\n\n";
+    }else {
+        std::cout << "Transformer equal\n\n";
     }
 
     return 0;

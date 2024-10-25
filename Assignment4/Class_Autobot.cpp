@@ -55,8 +55,8 @@ bool Autobot::getFirepowerAutobot() const
 // Overload operator
 std::ostream& operator<<(std::ostream& os, const Autobot& autobot)
 {
-    os << "Autobot [Firepower: " << autobot._firepower_autobot << ", Helping: "
-       << (autobot._helping ? "Yes" : "No") << "]";
+    os << "Autobot, firepower: " << autobot._firepower_autobot << ", helping: "
+       << (autobot._helping ? "Yes" : "No");
     return os;
 }
 

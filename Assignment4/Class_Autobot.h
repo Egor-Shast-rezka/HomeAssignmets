@@ -14,6 +14,7 @@ class Autobot : public Transformer
 {
 public:
     Autobot();
+    Autobot(unsigned int _firepower_autobot, bool _helping); // Overload constructor
     ~Autobot() override;
 
     bool transform() override;

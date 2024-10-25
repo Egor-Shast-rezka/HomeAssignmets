@@ -14,6 +14,7 @@ class Dinobot : public Transformer
 {
 public:
     Dinobot();
+    Dinobot(unsigned int _firepower_dinobot, bool _still_alive); // Overload constructor
     ~Dinobot() override;
 
     bool transform() override;
@@ -27,6 +28,10 @@ public:
     void setFirepowerDinobot(int fire);
 
     bool getFirepowerDinobot() const;
+    
+    // This if frends operator
+    friend std::ostream& operator<<(std::ostream& os, const Dinobot& dinobot);
+    friend std::istream& operator>>(std::istream& is, Dinobot& dinobot);
 
 private:
     unsigned int _firepower_dinobot;

@@ -51,6 +51,22 @@ bool Dinobot::getFirepowerDinobot() const
     return _firepower_dinobot;
 }
 
+// Overload operator
+std::ostream& operator<<(std::ostream& os, const Dinobot& dinobot)
+{
+    os << "Dinobot, firepower: " << dinobot._firepower_dinobot << ", still allive? : "
+       << (dinobot._still_alive ? "Yes" : "No");
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Dinobot& dinobot)
+{
+    std::cout << "Enter firepower: ";
+    is >> dinobot._firepower_dinobot;
+    std::cout << "Is Dinobot still allive? (1 for Yes, 0 for No): ";
+    is >> dinobot._still_alive;
+    return is;
+}
 
 
 
