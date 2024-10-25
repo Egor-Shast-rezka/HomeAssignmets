@@ -1,5 +1,6 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -pthread
+CXXFLAGS = -std=c++11 -Wall -Werror -Wpedantic -pthread
+LDFLAGS = -lgtest -lgtest_main
 
 TARGET = main
 TEST_TARGET = test_transformer
@@ -13,7 +14,7 @@ TEST_OBJS = $(TEST_SRCS:.cpp=.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -21,9 +22,9 @@ $(TARGET): $(OBJS)
 test: $(TEST_TARGET)
 
 $(TEST_TARGET): $(TEST_OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TEST_TARGET) $(TEST_OBJS) -lgtest -lgtest_main
-	./$(TEST_TARGET)
-	rm -rf $(TEST_TARGET)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+	./$@
+	rm -rf $@
 
 clean:
 	rm -f $(OBJS) $(TARGET) $(TEST_OBJS) $(TEST_TARGET)
