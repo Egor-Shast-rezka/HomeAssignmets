@@ -28,7 +28,7 @@ public:
     void setFirepowerDinobot(int fire);
 
     bool getFirepowerDinobot() const;
-    
+
     // This if frends operator
     friend std::ostream& operator<<(std::ostream& os, const Dinobot& dinobot);
     friend std::istream& operator>>(std::istream& is, Dinobot& dinobot);

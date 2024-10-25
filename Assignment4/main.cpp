@@ -29,9 +29,13 @@ int main()
     if (decepticon.getFirepowerDecepticon() > autobot.getFirepowerAutobot())
     {
         std::cout << "Decepticon win\n\n";
-    } else if (decepticon.getFirepowerDecepticon() < autobot.getFirepowerAutobot()) {
+    }
+    else if (decepticon.getFirepowerDecepticon() < autobot.getFirepowerAutobot())
+    {
         std::cout << "Autobot win\n\n";
-    }else {
+    }
+    else
+    {
         std::cout << "Transformer equal\n\n";
     }
 
