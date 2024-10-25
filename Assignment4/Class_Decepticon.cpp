@@ -39,7 +39,20 @@ void Decepticon::setFirepowerDecepticon(int fire) {
     
 bool Decepticon::getFirepowerDecepticon() const { return _firepower_decepticon; }
 
+// Overload operator
+std::ostream& operator<<(std::ostream& os, const Decepticon& decepticon) {
+    os << "Decepticon, firepower: " << decepticon._firepower_decepticon << ", bloodiness: " 
+       << (decepticon._bloodiness ? "Yes" : "No");
+    return os;
+}
 
+std::istream& operator>>(std::istream& is, Decepticon& decepticon) {
+    std::cout << "Enter firepower: ";
+    is >> decepticon._firepower_decepticon;
+    std::cout << "Is Decepticon bloodiness? (1 for Yes, 0 for No): ";
+    is >> decepticon._bloodiness;
+    return is;
+}
 
 
 

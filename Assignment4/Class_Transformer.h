@@ -38,6 +38,10 @@ public:
     void setFuel(unsigned int fuel);
     
     unsigned int getFuel();
+    
+    // This if frends operator
+    friend std::ostream& operator<<(std::ostream& os, const Transformer& transformer);
+    friend std::istream& operator>>(std::istream& is, Transformer& transformer);
 
 protected:
     unsigned int _ammo;

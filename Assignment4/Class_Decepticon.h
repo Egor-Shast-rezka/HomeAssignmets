@@ -27,6 +27,10 @@ public:
     
     bool getFirepowerDecepticon() const;
     
+    // This if frends operator
+    friend std::ostream& operator<<(std::ostream& os, const Decepticon& decepticon);
+    friend std::istream& operator>>(std::istream& is, Decepticon& decepticon);
+    
 private:
     unsigned int _firepower_decepticon;
     bool _bloodiness;

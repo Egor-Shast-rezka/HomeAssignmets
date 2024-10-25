@@ -27,6 +27,10 @@ public:
     
     bool getFirepowerAutobot() const;
     
+    // This if frends operator
+    friend std::ostream& operator<<(std::ostream& os, const Autobot& autobot);
+    friend std::istream& operator>>(std::istream& is, Autobot& autobot);
+    
 private:
     unsigned int _firepower_autobot;
     bool _helping;

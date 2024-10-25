@@ -40,6 +40,20 @@ void Autobot::setFirepowerAutobot(int fire) {
     
 bool Autobot::getFirepowerAutobot() const { return _firepower_autobot; }
 
+// Overload operator
+std::ostream& operator<<(std::ostream& os, const Autobot& autobot) {
+    os << "Autobot [Firepower: " << autobot._firepower_autobot << ", Helping: " 
+       << (autobot._helping ? "Yes" : "No") << "]";
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Autobot& autobot) {
+    std::cout << "Enter firepower: ";
+    is >> autobot._firepower_autobot;
+    std::cout << "Is Autobot helping? (1 for Yes, 0 for No): ";
+    is >> autobot._helping;
+    return is;
+}
 
 
 
