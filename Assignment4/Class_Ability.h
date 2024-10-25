@@ -9,7 +9,8 @@
 #include "Class_Transformer.h"
 
 // Declare class Ability
-class Ability {
+class Ability
+{
 public:
     Ability();
     Ability(bool hav, unsigned int power);
@@ -18,12 +19,12 @@ public:
 
     // Is have
     void setIsHave(bool hav);
-    
+
     bool getIsHave() const;
 
     // Power
     void setPower(unsigned int power);
-    
+
     unsigned int getPower() const;
 
 private:

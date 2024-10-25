@@ -11,8 +11,10 @@ Ability::Ability() : _is_have(true), _power(0) {}
 
 Ability::Ability(bool hav, unsigned int power) : _is_have(hav), _power(power) {}
 
-void Ability::activate(Transformer& transformer) {
-    if (transformer.getFuel() < _power) {
+void Ability::activate(Transformer& transformer)
+{
+    if (transformer.getFuel() < _power)
+    {
         std::cout << "-> Not enough fuel to activate" << std::endl;
         return;
     }
@@ -22,15 +24,23 @@ void Ability::activate(Transformer& transformer) {
 }
 
 // Setter and getter for Ability
-void Ability::setIsHave(bool hav) {
+void Ability::setIsHave(bool hav)
+{
     _is_have = hav;
 }
-bool Ability::getIsHave() const { return _is_have; }
+bool Ability::getIsHave() const
+{
+    return _is_have;
+}
 
-void Ability::setPower(unsigned int power) {
+void Ability::setPower(unsigned int power)
+{
     _power = power;
 }
-unsigned int Ability::getPower() const { return _power; }
+unsigned int Ability::getPower() const
+{
+    return _power;
+}
 
 
 

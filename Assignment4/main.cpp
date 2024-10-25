@@ -19,17 +19,18 @@ int main()
     Autobot autobot;
     std::cin >> autobot;
     std::cout << autobot << std::endl << "\n";
-    
+
     // Create second Transformer and create your strong
     Decepticon decepticon;
     std::cin >> decepticon;
     std::cout << decepticon << std::endl << "\n";
-    
+
     // Realization function comparison two Transformers
-    if (decepticon.getFirepowerDecepticon() > autobot.getFirepowerAutobot()) {
+    if (decepticon.getFirepowerDecepticon() > autobot.getFirepowerAutobot())
+    {
         std::cout << "Decepticon win\n";
     }
-    
+
     return 0;
 }
 

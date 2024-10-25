@@ -12,7 +12,8 @@
 #include "Class_Weapon.h"
 
 // Tests for class Transformer
-TEST(TransformerTest, InitialValues) {
+TEST(TransformerTest, InitialValues)
+{
     Transformer transformer;
     // Check inital values
     EXPECT_EQ(transformer.getLevel(), 15);
@@ -20,14 +21,16 @@ TEST(TransformerTest, InitialValues) {
     EXPECT_EQ(transformer.getFuel(), 20);
 }
 
-TEST(TransformerTest, FireWeapon) {
+TEST(TransformerTest, FireWeapon)
+{
     Transformer transformer;
     transformer.fire();
     EXPECT_EQ(transformer.getAmmo(), 5);
 }
 
 // Test for class Ability
-TEST(AbilityTest, Activation) {
+TEST(AbilityTest, Activation)
+{
     Transformer transformer;
     Ability ability(true, 5);
     transformer.setFuel(10); // Set fuel
@@ -36,14 +39,16 @@ TEST(AbilityTest, Activation) {
 }
 
 // Test for class Weapon
-TEST(WeaponTest, FireWeaponDecrease) {
+TEST(WeaponTest, FireWeaponDecrease)
+{
     Weapon weapon(5, true);
     weapon.setPatron(weapon.getPatron() - 1); // .fire()
     EXPECT_EQ(weapon.getPatron(), 4);
 }
 
 // Test for class Autobot
-TEST(AutobotTest, AutobotCreation) {
+TEST(AutobotTest, AutobotCreation)
+{
     Autobot autobot;
     EXPECT_EQ(autobot.getLevel(), 15); // check init level
     EXPECT_EQ(autobot.getAmmo(), 5); // check init ammo
@@ -51,7 +56,8 @@ TEST(AutobotTest, AutobotCreation) {
 }
 
 // Test for class Decepticon
-TEST(DecepticonTest, DecepticonCreation) {
+TEST(DecepticonTest, DecepticonCreation)
+{
     Decepticon decepticon;
     EXPECT_EQ(decepticon.getLevel(), 15); // check init level
     EXPECT_EQ(decepticon.getAmmo(), 5); // check init ammo
@@ -59,14 +65,16 @@ TEST(DecepticonTest, DecepticonCreation) {
 }
 
 // Test for class Dinobot
-TEST(DinobotTest, DinobotCreation) {
+TEST(DinobotTest, DinobotCreation)
+{
     Dinobot dinobot;
     EXPECT_EQ(dinobot.getLevel(), 15); // check init level
     EXPECT_EQ(dinobot.getAmmo(), 5); // check init ammo
     EXPECT_EQ(dinobot.getFuel(), 20); // check init fuel
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
