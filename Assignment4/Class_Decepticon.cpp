@@ -54,8 +54,7 @@ bool Decepticon::getFirepowerDecepticon() const
 // Overload operator
 std::ostream& operator<<(std::ostream& os, const Decepticon& decepticon)
 {
-    os << "Decepticon, firepower: " << decepticon._firepower_decepticon << ", bloodiness: "
-       << (decepticon._bloodiness ? "Yes" : "No");
+    os << "Decepticon. Firepower: " << decepticon._firepower_decepticon << ", bloodiness: " << (decepticon._bloodiness ? "Yes" : "No");
     return os;
 }
 
