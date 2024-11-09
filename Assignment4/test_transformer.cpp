@@ -4,12 +4,12 @@
 */
 
 #include <gtest/gtest.h>
-#include "Class_Transformer.h"
-#include "Class_Autobot.h"
-#include "Class_Decepticon.h"
-#include "Class_Dinobot.h"
-#include "Class_Ability.h"
-#include "Class_Weapon.h"
+#include "Transformer.h"
+#include "Autobot.h"
+#include "Decepticon.h"
+#include "Dinobot.h"
+#include "Ability.h"
+#include "Weapon.h"
 
 // Tests for class Transformer
 TEST(TransformerTest, InitialValues)
@@ -73,23 +73,77 @@ TEST(DinobotTest, DinobotCreation)
     EXPECT_EQ(dinobot.getFuel(), 20); // check init fuel
 }
 
-int main(int argc, char **argv)
+// Test overload operator
+TEST(AutobotTest, ComparisonOperators)
 {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    Autobot autobot1(100, true);
+    Autobot autobot2(150, false);
+
+    // Checking comparison operators
+    EXPECT_LT(autobot1, autobot2);
+    EXPECT_GT(autobot2, autobot1);
+    EXPECT_FALSE(autobot1 == autobot2);
+
+    autobot1.setFirepowerAutobot(150); // Change for check
+    EXPECT_EQ(autobot1, autobot2); // Now they equal
 }
 
+// Test comparison operators for Decepticon
+TEST(DecepticonTest, ComparisonOperators)
+{
+    Decepticon decepticon1(120, true);
+    Decepticon decepticon2(100, false);
 
+    // Checking comparison operators
+    EXPECT_GT(decepticon1, decepticon2);
+    EXPECT_LT(decepticon2, decepticon1);
+    EXPECT_FALSE(decepticon1 == decepticon2);
 
+    decepticon2.setFirepowerDecepticon(120); // Change for check
+    EXPECT_EQ(decepticon1, decepticon2); // Now they equal
+}
 
+// Test comparison between Autobot and Decepticon
+TEST(TransformerComparisonTest, AutobotVsDecepticon)
+{
+    Autobot autobot(130, true);
+    Decepticon decepticon(140, true);
 
+    // Checking comparison operators
+    EXPECT_LT(autobot, decepticon);
+    EXPECT_GT(decepticon, autobot);
+    EXPECT_FALSE(autobot == decepticon);
 
+    autobot.setFirepowerAutobot(140); // Change for check
+    EXPECT_EQ(autobot, decepticon); // Now they equal
+}
 
+// Test comparison operators for Dinobot
+TEST(DinobotTest, ComparisonOperators)
+{
+    Dinobot dinobot1(100, true);
+    Dinobot dinobot2(150, false);
 
+    // Checking comparison operators
+    EXPECT_LT(dinobot1, dinobot2);
+    EXPECT_GT(dinobot2, dinobot1);
+    EXPECT_FALSE(dinobot1 == dinobot2);
 
+    dinobot1.setFirepowerDinobot(150); // Change for check
+    EXPECT_EQ(dinobot1, dinobot2); // Now they equal
+}
 
+// Test comparison between Dinobot and Autobot
+TEST(TransformerComparisonTest, DinobotVsAutobot)
+{
+    Dinobot dinobot(120, true);
+    Autobot autobot(130, false);
 
+    // Checking comparison operators
+    EXPECT_LT(dinobot, autobot);
+    EXPECT_GT(autobot, dinobot);
+    EXPECT_FALSE(dinobot == autobot);
 
-
-
-
+    dinobot.setFirepowerDinobot(130); // Change for check
+    EXPECT_EQ(dinobot, autobot); // Now they equal
+}
