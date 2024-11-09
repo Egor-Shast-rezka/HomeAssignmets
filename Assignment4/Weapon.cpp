@@ -3,7 +3,7 @@
     In this class the Weapon class is created.
 */
 
-#include "Class_Weapon.h"
+#include "Weapon.h"
 
 Weapon::Weapon() : _patron(0), _is_have(false) {}
 Weapon::Weapon(unsigned int patron, bool hav) : _patron(patron), _is_have(hav) {}

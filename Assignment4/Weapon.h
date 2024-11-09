@@ -3,8 +3,8 @@
     In this class the Weapon class is decared.
 */
 
-#ifndef CLASS_WEAPON_H
-#define CLASS_WEAPON_H
+#ifndef WEAPON_H
+#define WEAPON_H
 
 // // Declare class Weapon for composition
 class Weapon

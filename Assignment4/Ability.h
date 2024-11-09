@@ -3,10 +3,10 @@
     In this class the Ability class is decared.
 */
 
-#ifndef CLASS_ABILITY_H
-#define CLASS_ABILITY_H
+#ifndef ABILITY_H
+#define ABILITY_H
 
-#include "Class_Transformer.h"
+#include "Transformer.h"
 
 // Declare class Ability
 class Ability

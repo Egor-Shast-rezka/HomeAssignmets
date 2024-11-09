@@ -4,7 +4,7 @@
 */
 
 #include <iostream>
-#include "Class_Ability.h"
+#include "Ability.h"
 
 // Constructor Ability
 Ability::Ability() : _is_have(true), _power(0) {}

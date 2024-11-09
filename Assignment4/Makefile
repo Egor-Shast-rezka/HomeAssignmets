@@ -5,10 +5,10 @@ LDFLAGS = -lgtest -lgtest_main
 TARGET = main
 TEST_TARGET = test_transformer
 
-SRCS = main.cpp Class_Transformer.cpp Class_Autobot.cpp Class_Dinobot.cpp Class_Decepticon.cpp Class_Weapon.cpp Class_Ability.cpp
+SRCS = main.cpp Transformer.cpp Autobot.cpp Dinobot.cpp Decepticon.cpp Weapon.cpp Ability.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-TEST_SRCS = test_transformer.cpp Class_Transformer.cpp Class_Autobot.cpp Class_Dinobot.cpp Class_Decepticon.cpp Class_Weapon.cpp Class_Ability.cpp
+TEST_SRCS = test_transformer.cpp Transformer.cpp Autobot.cpp Dinobot.cpp Decepticon.cpp Weapon.cpp Ability.cpp
 TEST_OBJS = $(TEST_SRCS:.cpp=.o)
 
 all: $(TARGET)

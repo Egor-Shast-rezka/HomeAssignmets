@@ -6,11 +6,11 @@
 
 #include <iostream>
 #include <string> // only for getting data from user, not used in general code
-#include "Class_Transformer.h"
-#include "Class_Autobot.h"
-#include "Class_Dinobot.h"
-#include "Class_Decepticon.h"
-#include "Class_Weapon.h"
+#include "Transformer.h"
+#include "Autobot.h"
+#include "Dinobot.h"
+#include "Decepticon.h"
+#include "Weapon.h"
 
 //Main function
 int main()
@@ -25,18 +25,52 @@ int main()
     std::cin >> decepticon;
     std::cout << decepticon << std::endl << "\n";
 
-    // Realization function comparison two Transformers
-    if (decepticon.getFirepowerDecepticon() > autobot.getFirepowerAutobot())
+    // Create third Transformer and create your strong
+    Dinobot dinobot;
+    std::cin >> dinobot;
+    std::cout << dinobot << std::endl << "\n";
+
+    // Realization function comparison two Transformers and overload operator
+    // Compare decepticon and autobot
+    if (decepticon > autobot)
     {
-        std::cout << "Decepticon win\n\n";
+        std::cout << "Decepticon is stronger than Autobot\n\n";
     }
-    else if (decepticon.getFirepowerDecepticon() < autobot.getFirepowerAutobot())
+    else if (decepticon < autobot)
     {
-        std::cout << "Autobot win\n\n";
+        std::cout << "Autobot is stronger than Decepticon\n\n";
     }
     else
     {
-        std::cout << "Transformer equal\n\n";
+        std::cout << "Autobot and Decepticon are equally strong\n\n";
+    }
+
+    // Compare decepticon and dinobot
+    if (decepticon > dinobot)
+    {
+        std::cout << "Decepticon is stronger than Dinobot\n\n";
+    }
+    else if (decepticon < dinobot)
+    {
+        std::cout << "Dinobot is stronger than Decepticon\n\n";
+    }
+    else
+    {
+        std::cout << "Dinobot and Decepticon are equally strong\n\n";
+    }
+
+    // Compare dinobot and autobot
+    if (dinobot > autobot)
+    {
+        std::cout << "Dinobot is stronger than Autobot\n\n";
+    }
+    else if (dinobot < autobot)
+    {
+        std::cout << "Autobot is stronger than Dinobot\n\n";
+    }
+    else
+    {
+        std::cout << "Autobot and Dinobot are equally strong\n\n";
     }
 
     return 0;
