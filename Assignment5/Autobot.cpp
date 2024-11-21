@@ -63,7 +63,7 @@ bool Autobot::fire()
     }
 }
 
-// Ultimate for Autobot 
+// Ultimate for Autobot
 bool Autobot::ultimate()
 {
     std::cout << "~Method: ultimate; Class: Autobot~" << std::endl << std::endl;
