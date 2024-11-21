@@ -23,7 +23,10 @@ public:
     Autobot(unsigned int _firepower_autobot, bool _helping); // Overload constructor
     ~Autobot() override;
 
+    // Virtual metods
     bool transform() override;
+    bool fire() override;
+    bool ultimate() override;
 
     // Helping
     void setHelping(bool help);

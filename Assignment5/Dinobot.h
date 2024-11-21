@@ -23,7 +23,10 @@ public:
     Dinobot(unsigned int _firepower_dinobot, bool _still_alive); // Overload constructor
     ~Dinobot() override;
 
+    // Virtual metods
     bool transform() override;
+    bool fire() override;
+    bool ultimate() override;
 
     // Alive
     void setAlive(bool alive);

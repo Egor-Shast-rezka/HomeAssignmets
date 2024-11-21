@@ -8,6 +8,7 @@
 #include "Autobot.h"
 #include "Decepticon.h"
 #include "Dinobot.h"
+#include "Ability.h"
 
 // Creation constructor Decepticon
 Decepticon::Decepticon() : Transformer(), _firepower_decepticon(100), _bloodiness(true)
@@ -26,12 +27,56 @@ Decepticon::~Decepticon()
 
 bool Decepticon::transform()
 {
+    std::cout << "~Method: transform; Class: Decepticon~" << std::endl << std::endl;
     if (_level < 10)
     {
         std::cout << "-> Not enogh level" << std::endl << std::endl;
         return false;
     }
     std::cout << "-> Decepticon transforming in a Tank." << std::endl << std::endl;
+    return true;
+}
+
+// Function fire implementation for Decepticon
+bool Decepticon::fire()
+{
+    std::cout << "~Method: fire; Class: Decepticon~" << std::endl << std::endl;
+    if (_weapon.getIsHave() && _weapon.getPatron() > 0)   // Does the Decepticon have weapon and patrons?
+    {
+        _weapon.setPatron(_weapon.getPatron()-1); // Decepticon shot
+        std::cout << "-> Decepticon fire from weapon..." << std::endl << std::endl;
+        std::cout << "Ammo after firing: " << _weapon.getPatron() << std::endl << std::endl;
+        return true;
+    }
+    else if (_ammo > 0)     // If Decepticon dont have weapon or patrones
+    {
+        _ammo--; // Decepticon shot
+        std::cout << "-> Decepticon firing..." << std::endl << std::endl;
+        std::cout << "Ammo after firing: " << Decepticon::getAmmo() << std::endl << std::endl;
+        return true;
+    }
+    else
+    {
+        std::cout << "-> No ammo!" << std::endl;
+        return false;
+    }
+}
+
+// Ultimate for Decepticon
+bool Decepticon::ultimate()
+{
+    std::cout << "~Method: ultimate; Class: Decepticon~" << std::endl << std::endl;
+    if (_fuel > 15)
+    {
+        Ability ultimateAbility(true, 15); // Create Ability
+        ultimateAbility.activate(*this);
+        std::cout << "-> Decepticon ultimate!!!! ..." << std::endl;
+        std::cout << "-> Left fuel: " << _fuel << std::endl << std::endl;
+    }
+    else
+    {
+        std::cout << "-> Fuel on Decepticon is lost" << std::endl << std::endl;
+    }
     return true;
 }
 

@@ -8,6 +8,7 @@
 #include "Autobot.h"
 #include "Decepticon.h"
 #include "Dinobot.h"
+#include "Ability.h"
 
 // Creation constructor Dinobot
 Dinobot::Dinobot() : _firepower_dinobot(100), _still_alive(true)
@@ -26,12 +27,56 @@ Dinobot::~Dinobot()
 
 bool Dinobot::transform()
 {
+    std::cout << "~Method: transform; Class: Dinobot~" << std::endl << std::endl;
     if (_level < 10)
     {
         std::cout << "-> Not enogh level" << std::endl << std::endl;
         return false;
     }
     std::cout << "-> Dinobot transforming in a dinosaur." << std::endl << std::endl;
+    return true;
+}
+
+// Function fire implementation for Dinobot
+bool Dinobot::fire()
+{
+    std::cout << "~Method: fire; Class: Dinobot~" << std::endl << std::endl;
+    if (_weapon.getIsHave() && _weapon.getPatron() > 0)   // Does the Dinobot have weapon and patrons?
+    {
+        _weapon.setPatron(_weapon.getPatron()-1); // Dinobot shot
+        std::cout << "-> Dinobot fire from weapon..." << std::endl << std::endl;
+        std::cout << "Ammo after firing: " << _weapon.getPatron() << std::endl << std::endl;
+        return true;
+    }
+    else if (_ammo > 0)     // If Dinobot dont have weapon or patrones
+    {
+        _ammo--; // Dinobot shot
+        std::cout << "-> Dinobot firing..." << std::endl << std::endl;
+        std::cout << "Ammo after firing: " << Dinobot::getAmmo() << std::endl << std::endl;
+        return true;
+    }
+    else
+    {
+        std::cout << "-> No ammo!" << std::endl;
+        return false;
+    }
+}
+
+// Ultimate for Dinobot
+bool Dinobot::ultimate()
+{
+    std::cout << "~Method: ultimate; Class: Dinobot~" << std::endl << std::endl;
+    if (_fuel > 15)
+    {
+        Ability ultimateAbility(true, 15); // Create Ability
+        ultimateAbility.activate(*this);
+        std::cout << "-> Dinobot ultimate!!!! ..." << std::endl;
+        std::cout << "-> Left fuel: " << _fuel << std::endl << std::endl;
+    }
+    else
+    {
+        std::cout << "-> Fuel on Dinobot is lost" << std::endl << std::endl;
+    }
     return true;
 }
 

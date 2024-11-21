@@ -23,7 +23,10 @@ public:
     Decepticon(unsigned int _firepower_decepticon, bool _bloodiness); // Overload constructor
     ~Decepticon() override;
 
+    // Virtual metods
     bool transform() override;
+    bool fire() override;
+    bool ultimate() override;
 
     // Bloodines
     void setBloodiness(bool blood);

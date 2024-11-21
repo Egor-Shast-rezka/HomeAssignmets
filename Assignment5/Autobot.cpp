@@ -8,6 +8,7 @@
 #include "Autobot.h"
 #include "Decepticon.h"
 #include "Dinobot.h"
+#include "Ability.h"
 
 // Constructor Autobot
 Autobot::Autobot() : Transformer(), _firepower_autobot(100), _helping(true)
@@ -27,12 +28,56 @@ Autobot::~Autobot()
 // Transforming for Autobot
 bool Autobot::transform()
 {
+    std::cout << "~Method: transform; Class: Autobot~" << std::endl << std::endl;
     if (_level < 10)
     {
         std::cout << "-> Not enogh level" << std::endl << std::endl;
         return false;
     }
     std::cout << "-> Autobot transforming in a Car." << std::endl << std::endl;
+    return true;
+}
+
+// Function fire implementation for Autobot
+bool Autobot::fire()
+{
+    std::cout << "~Method: fire; Class: Autobot~" << std::endl << std::endl;
+    if (_weapon.getIsHave() && _weapon.getPatron() > 0)   // Does the Autobot have weapon and patrons?
+    {
+        _weapon.setPatron(_weapon.getPatron()-1); // Autobot shot
+        std::cout << "-> Autobot fire from weapon..." << std::endl << std::endl;
+        std::cout << "Ammo after firing: " << _weapon.getPatron() << std::endl << std::endl;
+        return true;
+    }
+    else if (_ammo > 0)     // If Autobot dont have weapon or patrones
+    {
+        _ammo--; // Autobot shot
+        std::cout << "-> Autobot firing..." << std::endl << std::endl;
+        std::cout << "Ammo after firing: " << Autobot::getAmmo() << std::endl << std::endl;
+        return true;
+    }
+    else
+    {
+        std::cout << "-> No ammo!" << std::endl;
+        return false;
+    }
+}
+
+// Ultimate for Autobot 
+bool Autobot::ultimate()
+{
+    std::cout << "~Method: ultimate; Class: Autobot~" << std::endl << std::endl;
+    if (_fuel > 15)
+    {
+        Ability ultimateAbility(true, 15); // Create Ability
+        ultimateAbility.activate(*this);
+        std::cout << "-> Autobot ultimate!!!! ..." << std::endl;
+        std::cout << "-> Left fuel: " << _fuel << std::endl << std::endl;
+    }
+    else
+    {
+        std::cout << "-> Fuel on Autobot is lost" << std::endl << std::endl;
+    }
     return true;
 }
 
