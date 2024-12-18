@@ -1,11 +1,12 @@
 /*
-
+    Egor Shastin st129457@student.spbu.ru
+    This code implements the template class Sample, its specializations (for int and double) and also Class1,2,3
 */
 
 #ifndef TITLE_H
 #define TITLE_H
 
-// This is main class
+// This is main template class 
 template<typename Type>
 class Sample {
 public:
@@ -87,13 +88,13 @@ public:
     }
     
     int c_1_1(){
-        std::cout << "Today you luki number it: 8\n";
-        return 1;
+        std::cout << "Today you luck number it: 8\n";
+        return 8;
     }
     
     float c_2_1(){
-        std::cout << "You called num PI\n";
-        return 3.14;
+        std::cout << "You called num PI^2\n";
+        return 3.14*3.14;
     }
     
     void c_3_1(){
@@ -112,13 +113,13 @@ public:
     }
     
     int c_1_2(){
-        std::cout << "Today you luki number it: 5\n";
-        return 1;
+        std::cout << "Today you luck number it: 5\n";
+        return 5;
     }
     
     float c_2_2(){
-        std::cout << "You called num PI\n";
-        return 3.14;
+        std::cout << "You called num PI/2\n";
+        return 3.14/2;
     }
     
     void c_3_2(){
@@ -137,8 +138,8 @@ public:
     }
     
     int c_1_3(){
-        std::cout << "Today you luki number it: 11\n";
-        return 1;
+        std::cout << "Today you luck number it: 11\n";
+        return 11;
     }
     
     float c_2_3(){

@@ -1,5 +1,6 @@
 /*
-    This code contain ...
+    Egor Shastin st129457@student.spbu.ru
+    This code contains an illustration of the program (template class Sample) working
 */
 
 #include <iostream>

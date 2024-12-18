@@ -1,5 +1,6 @@
 /*
-
+    Egor Shastin st129457@student.spbu.ru
+    This is code for testing all classes by using Google Test
 */
 
 #include <gtest/gtest.h>
