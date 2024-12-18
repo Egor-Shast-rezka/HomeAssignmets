@@ -5,7 +5,6 @@
 #ifndef TITLE_H
 #define TITLE_H
 
-
 // This is main class
 template<typename Type>
 class Sample {
@@ -81,6 +80,8 @@ private:
 
 class Class1 {
 public:
+    Class1(int val = 0) : value(val) {}
+    
     bool bar(int number, std::vector<float>& array){
         return number > 0;
     }
@@ -98,10 +99,14 @@ public:
     void c_3_1(){
         std::cout << "You called method c_3_1\n";
     }
+private:
+    int value;
 };
 
 class Class2 {
 public:
+    Class2(int val = 0) : value(val) {}
+    
     bool bar(int number, std::vector<float>& array){
         return !array.empty();
     }
@@ -119,10 +124,14 @@ public:
     void c_3_2(){
         std::cout << "You called method c_3_2\n";
     }
+private:
+    int value;
 };
 
 class Class3 {
 public:
+    Class3(int val = 0) : value(val) {}
+    
     bool bar(int number, std::vector<float>& array){
         return static_cast<std::vector<float>::size_type>(-number) == array.size();
     }
@@ -140,6 +149,8 @@ public:
     void c_3_3(){
         std::cout << "You called method c_3_3\n";
     }
+private:
+    int value;
 };
 
 #endif
