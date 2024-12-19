@@ -29,3 +29,5 @@ $(TEST_TARGET): $(TEST_OBJS)
 clean:
 	rm -f $(OBJS) $(TARGET) $(TEST_OBJS) $(TEST_TARGET)
 
+memory: $(TARGET)
+	valgrind --leak-check=full ./$(TARGET)
